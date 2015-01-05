@@ -12,6 +12,11 @@ Install it yourself as:
 
 TODO: Write usage instructions here
 
+## Development
+
+- Use with any distance erg test
+- Error handling with bad files
+
 ## Contributing
 
 1. Fork it ( https://github.com/hpoydar/concept2-data-parser/fork )

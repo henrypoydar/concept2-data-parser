@@ -38,12 +38,18 @@ class Concept2DataParserTest < Minitest::Test
 
     it "compiles the overall 500m split" do
       assert_equal ["2:11.5", "2:11.3", "2:15.1", "2:09.3"],
-        @parser.rowers.map {|r| r[:overall_500m_split] }
+        @parser.rowers.map {|r| r[:overall_split] }
     end
-  end
 
-  describe "writing formatted data" do
+    it "compiles 500m split average stroke rate" do
+      assert_equal [28, 25, 25, 24, 25, 25, 26, 25, 26, 26, 27, 29],
+        @parser.rowers[0][:stroke_rates]
+    end
 
+    it "compiles 500m splits" do
+      assert_equal ["2:03.5", "2:12.5", "2:14", "2:15", "2:15", "2:14.5", "2:13", "2:14", "2:10", "2:10.4", "2:10.5", "2:04.6"],
+        @parser.rowers[0][:splits]
+    end
   end
 
 end

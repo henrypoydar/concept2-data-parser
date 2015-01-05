@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+
+lib = File.expand_path(File.dirname(__FILE__) + '/../lib')
+$LOAD_PATH.unshift(lib) if File.directory?(lib) && !$LOAD_PATH.include?(lib)
+
+
+require 'concept2/data/parser'
+
+if ARGV.empty?
+  puts "Please pass in a data file"
+  exit
+end
+
+parser = Concept2::Data::Parser.new(ARGV.first)
+parser.write_file!
