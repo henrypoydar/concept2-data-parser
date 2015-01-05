@@ -10,7 +10,7 @@ Install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+    $ concept2-parser <stroke-data-file.txt>
 
 ## Development
 
