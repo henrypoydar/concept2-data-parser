@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.version       = Concept2::Data::Parser::VERSION
   spec.authors       = ["Henry Poydar"]
   spec.email         = ["hpoydar@gmail.com"]
-  spec.summary       = %q{Compiles a 6K split spreadsheet from Concept2 stroke data files}
+  spec.summary       = %q{Compiles a 6k erg test 500m splits spreadsheet from Concept2 stroke data files}
   spec.homepage      = "https://github.com/hpoydar/concept2-data-parser"
   spec.license       = "MIT"
 

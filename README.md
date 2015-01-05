@@ -1,20 +1,10 @@
-# Concept2::Data::Parser
+# Concept2 Data Parser
 
-TODO: Write a gem description
+Compiles a 6k erg test 500m splits spreadsheet from Concept2 stroke data files
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'concept2-data-parser'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
+Install it yourself as:
 
     $ gem install concept2-data-parser
 
