@@ -58,8 +58,8 @@ module Concept2
 
       def compile_totals!
         @rowers.each do |rower|
-          rower[:overall_time] = ChronicDuration.output(
-            rower[:data].last[0].round(1), format: :chrono)
+          rower[:overall_time] = normalize_duration(ChronicDuration.output(
+            rower[:data].last[0].round(1), format: :chrono))
           rower[:overall_stroke_rate] = average_stroke_rate(
             rower[:data].map {|n| n[2] })
           rower[:overall_split] = split_time(rower[:data].last[0], 6000.0)
@@ -96,10 +96,15 @@ module Concept2
       end
 
       def split_time(secs, distance=500.0)
-        ChronicDuration.output(
-          ((secs * 500.0) / distance).round(1), format: :chrono)
+        normalize_duration(ChronicDuration.output(
+          ((secs * 500.0) / distance).round(1), format: :chrono))
       end
 
+      # Adds a decimal place so that spreadsheets distinguish hours/minutes
+      def normalize_duration(duration)
+        duration = "#{duration}.0" unless duration =~ /\..+$/
+        duration
+      end
 
     end
   end

@@ -27,7 +27,7 @@ class Concept2DataParserTest < Minitest::Test
     end
 
     it "compiles the overall time" do
-      assert_equal ["26:17.5", "26:15", "27:00.9", "25:52"],
+      assert_equal ["26:17.5", "26:15.0", "27:00.9", "25:52.0"],
         @parser.rowers.map {|r| r[:overall_time] }
     end
 
@@ -47,7 +47,7 @@ class Concept2DataParserTest < Minitest::Test
     end
 
     it "compiles 500m splits" do
-      assert_equal ["2:03.5", "2:12.5", "2:14", "2:15", "2:15", "2:14.5", "2:13", "2:14", "2:10", "2:10.4", "2:10.5", "2:04.6"],
+      assert_equal ["2:03.5", "2:12.5", "2:14.0", "2:15.0", "2:15.0", "2:14.5", "2:13.0", "2:14.0", "2:10.0", "2:10.4", "2:10.5", "2:04.6"],
         @parser.rowers[0][:splits]
     end
   end
