@@ -11,5 +11,12 @@ if ARGV.empty?
   exit
 end
 
-parser = Concept2::Data::Parser.new(ARGV.first)
+distance = case ARGV[1]
+when '--6000'; 6000
+when '--2000'; 2000
+else; 2000; end
+
+puts "Test distance: #{distance}m"
+
+parser = Concept2::Data::Parser.new(ARGV.first, distance)
 parser.write_file!

@@ -8,8 +8,9 @@ module Concept2
 
       attr_accessor :rowers
 
-      def initialize(file)
+      def initialize(file, distance=6000)
         @file = file
+        @distance = distance
         @raw = nil
         @rowers = [] # Array of arrays where we'll store everything
 
@@ -21,7 +22,7 @@ module Concept2
 
       def write_file!(file="#{File.basename(@file)}-formatted.csv")
         headers = ["Name", "Time", "Avg. Split", "Avg. SPM"]
-        12.times do |i|
+        (@distance/500).times do |i|
           headers << "#{(i+1)*500}m Split"
           headers << "#{(i+1)*500}m SPM"
         end
@@ -33,7 +34,7 @@ module Concept2
             res << rower[:overall_time]
             res << rower[:overall_split]
             res << rower[:overall_stroke_rate]
-            12.times do |i|
+            (@distance/500).times do |i|
               res << rower[:splits][i]
               res << rower[:stroke_rates][i]
             end
@@ -62,14 +63,14 @@ module Concept2
             rower[:data].last[0].round(1), format: :chrono))
           rower[:overall_stroke_rate] = average_stroke_rate(
             rower[:data].map {|n| n[2] })
-          rower[:overall_split] = split_time(rower[:data].last[0], 6000.0)
+          rower[:overall_split] = split_time(rower[:data].last[0], @distance.to_f)
         end
       end
 
       def compile_splits!
         @rowers.each do |rower|
           idxs = []
-          12.times do |i|
+          (@distance/500).times do |i|
             idx_val = rower[:data].map {|r| r[1] }.
               min_by { |v| (v-(500*(i+1))).abs }
             idxs << rower[:data].index {|r| r[1] == idx_val }

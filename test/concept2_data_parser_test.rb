@@ -5,7 +5,7 @@ class Concept2DataParserTest < Minitest::Test
   describe "parsing data" do
     def setup
       @fixture = File.join(File.dirname(__FILE__),
-        'fixtures/6k-stroke-data.txt')
+        'fixtures/6K-stroke-data.txt')
       @parser = Concept2::Data::Parser.new(@fixture)
     end
 
@@ -22,7 +22,7 @@ class Concept2DataParserTest < Minitest::Test
   describe "compiling data" do
     def setup
       @fixture = File.join(File.dirname(__FILE__),
-        'fixtures/6k-stroke-data.txt')
+        'fixtures/6K-stroke-data.txt')
       @parser = Concept2::Data::Parser.new(@fixture)
     end
 

@@ -1,6 +1,6 @@
 # Concept2 Data Parser
 
-Compiles a 6k erg test 500m splits spreadsheet from Concept2 stroke data files
+Compiles a 2K or 6K erg test 500m splits spreadsheet from Concept2 stroke data files
 
 ## Installation
 
@@ -14,7 +14,6 @@ Install it yourself as:
 
 ## Development
 
-- Use with any distance erg test
 - Error handling with bad files
 
 ## Contributing
